@@ -173,11 +173,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //* Intro Animation
 
-  const slideOutSound = new Audio("assets/sounds/intro.mp3");
+//   const slideOutSound = new Audio("assets/sounds/intro.mp3");
 
-  setTimeout(function () {
-    slideOutSound.play();
-  }, 1800);
+//   setTimeout(function () {
+//     slideOutSound.play();
+//   }, 1800);
 
   //* Hello Popup
 
