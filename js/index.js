@@ -172,8 +172,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   //* Intro Animation
-  // Eventlistener slide-out Animation
-  const slideOutSound = new Audio("../assets/sounds/intro.mp3");
+
+  const slideOutSound = new Audio("assets/sounds/intro.mp3");
 
   setTimeout(function () {
     slideOutSound.play();
