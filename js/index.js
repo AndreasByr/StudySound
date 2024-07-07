@@ -76,33 +76,38 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function releaseBalloon() {
-    for (let i = 0; i < 10; i++) {
+    const numberOfBalloons = 10;
+    //const screenWidth = window.innerWidth;
+  
+    for (let i = 0; i < numberOfBalloons; i++) {
       const balloonSVG = document.getElementById("balloon").cloneNode(true);
       balloonSVG.classList.remove("hidden");
       balloonSVG.classList.add("balloon");
-
+  
       // Zufällige Größe basierend auf der Bildschirmgröße
-      const size = Math.random() * (15 - 10) + 10; // Zufällige Größe zwischen 5vw und 10vw
+      const size = Math.random() * (15 - 10) + 10;
       balloonSVG.style.width = `${size}vw`;
-      balloonSVG.style.height = `auto`; // Behalte das Seitenverhältnis bei
-
-      // Zufällige horizontale Position
-      balloonSVG.style.left = Math.random() * 100 + "vw";
-
+      balloonSVG.style.height = `auto`;
+  
+      // Gleichmäßige horizontale Position
+      const position = (i / numberOfBalloons) * 100;
+      balloonSVG.style.left = position + "vw";
+  
       // Zufällige Geschwindigkeit
-      const duration = Math.random() * (7 - 3) + 3; // Zufällige Dauer zwischen 3s und 7s
+      const duration = Math.random() * (7 - 3) + 3;
       balloonSVG.style.animationDuration = `${duration}s`;
-
+  
       // Animation hinzufügen
       balloonSVG.style.animationName = "flyUp";
       document.body.appendChild(balloonSVG);
-
+  
       // Entferne das Ballon-Element nach der Animation
       balloonSVG.addEventListener("animationend", () => {
-        balloonSVG.remove();
+        balloonSVG.remove(); 
       });
     }
   }
+  
 
   //* Speechbubble
 
@@ -173,5 +178,27 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(function () {
     slideOutSound.play();
   }, 1800);
-  
+
+  //* Hello Popup
+
+    const helloTrigger = document.querySelector("#hello");
+    const helloPopup = document.querySelector(".popup");
+    const helloClose = helloPopup.querySelector(".hello-close");
+
+    helloTrigger.addEventListener("click", () => {
+        helloTrigger.classList.add("active");
+        helloPopup.classList.add("active");
+        body.classList.add("no-scroll");
+
+    });
+
+    helloClose.addEventListener("click", () => {
+        helloTrigger.classList.remove("active");
+        helloPopup.classList.remove("active");
+        body.classList.remove("no-scroll");
+    });
+
+
+
+
 });
