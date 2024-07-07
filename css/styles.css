@@ -1,0 +1,346 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    background-image: url("../assets/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+.container{
+    max-width: 100%;
+    margin: 0 auto;
+    width: 900px;
+    padding: 0 20px;
+}
+@media screen and (min-width: 576px){
+    .container{
+        padding: 0 30px;
+    }
+}
+@media screen and (min-width: 1024px){
+    .container{
+        padding: 0 40px;
+        width: 1200px;
+    }
+}
+
+
+.hidden {
+    display: none;
+  }
+
+/** Animation **/
+
+.slide-in{
+    animation: 1s slide-in 3s forwards;
+}
+.slide-out{
+    animation: 1s slide-out 3s forwards;
+}
+
+@keyframes slide-in{
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-out{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-100%);
+    }
+}
+
+/** Intro **/
+
+.intro{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-image: url("../assets/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.intro img{
+    width: 90%;
+    height: 90%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/** Headline **/
+
+
+.headline{
+    margin: 20px 0 20px 0;
+}
+@media screen and (min-width: 576px){
+    .headline{
+        margin: 40px 0 40px 0;
+    }
+}
+@media screen and (min-width: 1024px){
+    .headline{
+        margin: 50px 0 50px 0;
+    }
+}
+
+
+.headline svg{
+    width: 100%;
+    height: auto;
+
+}
+
+.headline svg .h-char{
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.headline svg .h-char.show{
+    opacity: 1;
+}
+
+/** Audio Buttons **/
+
+button{
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    position: relative;
+}
+
+.audio-buttons{
+    max-width: 100%;
+    padding-bottom: 100px;
+    position: relative;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+
+    grid-template-rows: auto;
+    gap: 10px;
+
+}
+
+@media screen and (min-width: 576px){
+    .audio-buttons{
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 20px;
+    } 
+}
+@media screen and (min-width: 768px){
+    .audio-buttons{
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 30px;
+    } 
+}
+ @media screen and (min-width: 1024px){
+    .audio-buttons{
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 40px;
+    } 
+}
+/*
+@media screen and (min-width: 1500px){
+    .audio-buttons{
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 50px;
+    } 
+} */
+
+/** Audio Button **/
+
+.audio-button{
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    position: relative;
+}
+
+
+.audio-button-border{
+    width: 100%;
+    height: 100%;
+}
+.audio-button-icon, .audio-button-icon-highlight{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: calc(100% - 20px);
+    max-height: calc(100% - 20px);
+}
+.icon-left .audio-button-icon, .icon-left .audio-button-icon-highlight{
+    transform: translate(-0%, -50%);
+    left: 2px;
+}
+.audio-button-icon-highlight{
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+.audio-button.play .audio-button-icon-highlight{
+    opacity: 1;
+    visibility: visible;
+}
+
+@media screen and (min-width: 576px){
+    .audio-button-icon,.audio-button-icon-highlight{
+        max-width: calc(100% - 30px);
+        max-height: calc(100% - 30px);
+    }
+
+}
+@media screen and (min-width: 768px){
+    .audio-button-icon,.audio-button-icon-highlight{
+        max-width: calc(100% - 40px);
+        max-height: calc(100% - 40px);
+    }
+}
+@media screen and (min-width: 1024px){
+    .audio-button-icon,.audio-button-icon-highlight{
+        max-width: calc(100% - 50px);
+        max-height: calc(100% - 50px);
+    }
+}
+/* @media screen and (min-width: 1500px){
+    .audio-button-icon,.audio-button-icon-highlight{
+        max-width: calc(100% - 60px);
+        max-height: calc(100% - 60px);
+    }
+} */
+
+
+/** Speech Bubble **/
+
+.speech-bubble{
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+    width: 120px;
+    height: max-content;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+@media screen and (min-width: 576px){
+    .speech-bubble{
+        width: 150px;
+    }
+}
+@media screen and (min-width: 768px){
+    .speech-bubble{
+        width: 200px;
+    }
+}
+@media screen and (min-width: 1024px){
+    .speech-bubble{
+        width: 250px;
+    }
+}
+
+.play .speech-bubble{
+    opacity: 1;
+}
+
+.open-left .speech-bubble{
+    right: calc(100% - 10px);
+    bottom: calc(50% + 10px);
+}
+.open-right .speech-bubble{
+    left:  calc(100% - 10px);
+    bottom: calc(50% + 10px);
+}
+.speech-bubble img{
+    width: 100%;
+    height: auto;
+    display: none;
+}
+.open-left .speech-bubble img.left{
+    display: block;
+}
+.open-right .speech-bubble img.right{
+    display: block;
+}
+
+/** Reset Button **/
+
+.reset-button{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+    border-radius: 50%;
+    width: 200px;
+    height: auto;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    font-size: 0;
+}
+.inner-reset-button{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.reset-button img{
+    width: 100%;
+    height: auto;
+}
+.reset-button .reset-button-img-active{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.reset-button.active .reset-button-img-active{
+    opacity: 1;
+}
+
+/** Balloon **/
+
+/* Füge dies in deine CSS-Datei ein */
+
+.balloon {
+    position: fixed;
+    bottom: -100px; /* Start unterhalb des Bildschirms */
+  }
+
+  .balloon svg{
+    width: 100%;
+    height: auto;
+  }
+  
+  @keyframes flyUp {
+    to {
+      bottom: 100vh; /* Bewege das Bild bis über den Bildschirm */
+    }
+  }
+  
+ 
+  
