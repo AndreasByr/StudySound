@@ -173,11 +173,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //* Intro Animation
 
-//   const slideOutSound = new Audio("assets/sounds/intro.mp3");
 
-//   setTimeout(function () {
-//     slideOutSound.play();
-//   }, 1800);
+  const intro = document.querySelector(".intro");
+  const content = document.querySelector(".content");
+  const slideOutSound = new Audio("../assets/sounds/intro.mp3");
+
+
+
+  intro.addEventListener("click", () => {
+    window.scrollTo(0, 0);
+    intro.classList.add("animation-running");
+    content.classList.add("animation-running");
+    slideOutSound.play();
+  });
+
 
   //* Hello Popup
 
