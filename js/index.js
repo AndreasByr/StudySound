@@ -142,33 +142,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //* Reset Button
   resetButton.addEventListener("click", () => {
-    characters.forEach((character) => {
-      character.classList.remove("show");
-    });
-    // Stoppe das Audio
-    if (currentAudio) {
-      currentAudio.pause();
-      currentAudio.currentTime = 0;
-      currentAudio = null;
-      if (currentButton) {
-        currentButton.classList.remove("play");
-        currentButton = null;
-      }
-    }
-    // Entferne die finish-Klasse und setze die geklickten Buttons zurück
-    body.classList.remove("finish");
-    clickedButtons.clear();
+    // characters.forEach((character) => {
+    //   character.classList.remove("show");
+    // });
+    // // Stoppe das Audio
+    // if (currentAudio) {
+    //   currentAudio.pause();
+    //   currentAudio.currentTime = 0;
+    //   currentAudio = null;
+    //   if (currentButton) {
+    //     currentButton.classList.remove("play");
+    //     currentButton = null;
+    //   }
+    // }
+    // // Entferne die finish-Klasse und setze die geklickten Buttons zurück
+    // body.classList.remove("finish");
+    // clickedButtons.clear();
 
-    // Entferne eventuell vorhandene Ballons
-    const balloons = document.querySelectorAll(".balloon");
-    balloons.forEach((balloon) => {
-      balloon.remove();
-    });
+    // // Entferne eventuell vorhandene Ballons
+    // const balloons = document.querySelectorAll(".balloon");
+    // balloons.forEach((balloon) => {
+    //   balloon.remove();
+    // });
 
-    resetButton.classList.add("active");
-    setTimeout(function () {
-      resetButton.classList.remove("active");
-    }, 1000);
+    // resetButton.classList.add("active");
+    // setTimeout(function () {
+    //   resetButton.classList.remove("active");
+    // }, 1000);
+    location.reload();
   });
 
   //* Intro Animation
